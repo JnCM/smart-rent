@@ -1,0 +1,19 @@
+{
+  "name": "smart-rent",
+  "version": "1.0.0",
+  "description": "Project to map a real rent contract to ethereum smart contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "smart-contracts",
+    "ethereum",
+    "solidity"
+  ],
+  "author": "Josué Nunes Campos",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3"
+  }
+}
