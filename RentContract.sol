@@ -116,7 +116,14 @@ contract RentContract{
         emit IsRentFinished(success);
     }
 
-    // TODO: Funcao para consultar os alugueis
+    // Funcao para consultar os alugueis
+    function getRents() public view returns (Item[] memory) {
+        return listOfRents;
+    }
+
+    function getRent(uint256 rentID) public view returns (Item memory) {
+        return listOfRents[rentID];
+    }
 
     modifier onlyOwner(){
         require(msg.sender == owner, "Only owner can call this method!");
