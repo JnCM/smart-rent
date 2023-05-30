@@ -26,6 +26,7 @@ contract RentContract{
         uint256 fineForNonDesocupationAfterTerm; // Multa por nao desocupacao depois do prazo
         uint256 fineForRescission; // Multa por recisao
         uint256 fineForNonPaymentOfExpenses; // Multa por nao pagamento das despesas da propriedade
+        uint256 fineForNotReturnedItems; // Multa por nao retorno dos itens do imovel
         // Multas em termos de percentuais
         uint256 fineForArrearsInPercent; // Percentual de multa por atraso
         uint256 feeForArrearsInPercent; // Percentual de juros de mora por atraso
@@ -55,6 +56,7 @@ contract RentContract{
         uint256 fineForNonDesocupationAfterTerm,
         uint256 fineForRescission,
         uint256 fineForNonPaymentOfExpenses,
+        uint256 fineForNotReturnedItems,
         uint256 fineForArrearsInPercent,
         uint256 feeForArrearsInPercent) external onlyOwner{
 
@@ -78,6 +80,7 @@ contract RentContract{
             fineForNonDesocupationAfterTerm,
             fineForRescission,
             fineForNonPaymentOfExpenses,
+            fineForNotReturnedItems,
             fineForArrearsInPercent,
             feeForArrearsInPercent,
             false
@@ -101,7 +104,7 @@ contract RentContract{
         
         (bool success, ) = (propertyContractAddress).call(
             abi.encodeWithSignature(
-                "transferirTokenExpirado(address,address,uint256)",
+                "transferPropertyOwnerShip(address,address,uint256)",
                 rent.renter,
                 rent.locator,
                 rent.propertyID
